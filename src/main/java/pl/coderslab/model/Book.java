@@ -1,7 +1,5 @@
 package pl.coderslab.model;
 
-import org.springframework.stereotype.Component;
-
 public class Book {
     private Long id;
     private String isbn;
@@ -9,19 +7,9 @@ public class Book {
     private String author;
     private String publisher;
     private String type;
-    private static Long nextId = 6L;
 
     public Book() {
     }
-
-    /*public Book(String isbn, String title, String author, String publisher, String type) {
-        //this.id = getNextId();
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
-        this.publisher = publisher;
-        this.type = type;
-    }*/
 
     public Book(Long id, String isbn, String title, String author, String publisher, String type) {
         this.id = id;
@@ -30,10 +18,6 @@ public class Book {
         this.author = author;
         this.publisher = publisher;
         this.type = type;
-    }
-
-    public static Long getNextId() {
-        return nextId++;
     }
 
     public Long getId() {

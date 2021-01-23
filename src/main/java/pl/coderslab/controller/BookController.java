@@ -27,17 +27,14 @@ public class BookController {
         return this.bookService.getBooks();
     }
 
-    @RequestMapping("/books/{bookID}")
+    @RequestMapping("/{bookID}")
     public Book getBook(@PathVariable Long bookID) {
         return this.bookService.getBook(bookID);
     }
 
     @PostMapping("")
     public void addBook(@RequestBody Book book) {
-//        return
         this.bookService.addBook(book);
-        System.out.println(book);
-        //return book.toString();
     }
 
 }

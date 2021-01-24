@@ -24,7 +24,7 @@ public class MemoryBookService implements BookService {
         return nextId++;
     }
 
-    //    Pobieranie listy wszystkich książek
+    // Pobieranie listy wszystkich książek
     @Override
     public List<Book> getBooks() {
         return bookList;
@@ -36,14 +36,14 @@ public class MemoryBookService implements BookService {
         return bookList.stream().filter(book -> book.getId().equals(id)).findFirst();
     }
 
-//    Dodanie obiektu.
+    // Dodanie obiektu.
     @Override
     public boolean addBook(Book book) {
         book.setId(MemoryBookService.getNextId());
         return bookList.add(book);
     }
 
-    //    Edycje obiektu.
+    // Edycje obiektu.
     @Override
     public void updateBook(Book book) {
         if (this.getBook(book.getId()).isPresent()) {
@@ -52,7 +52,7 @@ public class MemoryBookService implements BookService {
         }
     }
 
-//    Usuwanie obiektu.
+    // Usuwanie obiektu.
     @Override
     public void deleteBook(Long bookID) {
         if (getBook(bookID).isPresent()) {

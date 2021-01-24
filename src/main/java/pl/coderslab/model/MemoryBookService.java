@@ -52,6 +52,8 @@ public class MemoryBookService implements BookService {
 //    Usuwanie obiektu.
     @Override
     public void deleteBook(Long bookID) {
-
+        if (getBook(bookID).isPresent()) {
+            bookList.remove(this.getBook(bookID).get());
+        }
     }
 }

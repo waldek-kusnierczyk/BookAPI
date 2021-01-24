@@ -1,13 +1,14 @@
 package pl.coderslab.model;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BookService {
 //    Pobieranie listy wszystkich książek
     List<Book> getBooks();
 
 //    Pobieranie obiektu po wskazanym identyfikatorze.
-    Book getBook(Long bookID);
+    Optional<Book> getBook(Long id);
 
 //    Dodanie obiektu.
     boolean addBook(Book book);

@@ -41,9 +41,10 @@ public class BookController {
         this.bookService.addBook(book);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("")
+    @ResponseBody
     public void updateBook(@RequestBody Book book) {
-        //
+        bookService.updateBook(book);
     }
 
     @DeleteMapping("/{bookId}")

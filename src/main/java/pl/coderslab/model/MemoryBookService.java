@@ -45,8 +45,11 @@ public class MemoryBookService implements BookService {
 
     //    Edycje obiektu.
     @Override
-    public Book updateBook(Long bookID) {
-        return null;
+    public void updateBook(Book book) {
+        if (this.getBook(book.getId()).isPresent()) {
+            int id = bookList.indexOf(this.getBook(book.getId()).get());
+            bookList.set(id, book);
+        }
     }
 
 //    Usuwanie obiektu.

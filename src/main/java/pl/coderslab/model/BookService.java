@@ -14,7 +14,7 @@ public interface BookService {
     boolean addBook(Book book);
 
 //    Edycje obiektu.
-    Book updateBook(Long bookID);
+    void updateBook(Book book);
 
 //    Usuwanie obiektu.
     void deleteBook(Long bookID);
